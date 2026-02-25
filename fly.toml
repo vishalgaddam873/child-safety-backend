@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for child-safety-backend-service on 2026-02-25T11:21:11+05:30
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'child-safety-backend-service'
+primary_region = 'bom'
+
+[build]
+
+[http_service]
+  internal_port = 5000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '2gb'
+  cpus = 2
+  memory_mb = 2048
